@@ -1,10 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
     <title>Stopwatch</title>
+
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+
+    <script src="jquery/jquery-3.1.1.min.js"></script>
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+
+    <script src="script.js"></script>
 </head>
 <body>
+
+<!--form action="https://docs.google.com/a/starship.co/forms/d/e/1FAIpQLSd45fatauSzdGu33ZWZiDOMIU0wFFv9ia3r5YpVjQPrEx_XGA/formResponse" method="post">
+    <input type="radio" name="entry.364832717" value="static">Static<br>
+    <input type="radio" name="entry.364832717" value="flashing">Flashing<br>
+    <button type="submit">Submit</button>
+</form-->
+
+<div class="container">
+    <p>
+        <div class="btn-group btn-group-justified" role="group" aria-label="...">
+            <div class="btn-group btn-group-lg flashing" role="group">
+                <button type="button" class="btn btn-default concept active" onclick="change('concept',0)" id="concept0">Static</button>
+            </div>
+            <div class="btn-group btn-group-lg flashing" role="group">
+                <button type="button" class="btn btn-default concept" onclick="change('concept',1)" id="concept1">Flashing</button>
+            </div>
+        </div>
+    </p>
+    <p>
+        <button class="btn btn-primary btn-lg btn-block reaction" onclick="react(0)">Unchanged speed</button>
+        <button class="btn btn-primary btn-lg btn-block reaction" onclick="react(1)">Brake reaction</button>
+        <button class="btn btn-primary btn-lg btn-block reaction" onclick="react(2)">Full stop</button>
+    </p>
+    <div id="stop" style="display:none;">
+        <div class="btn-group btn-group-justified" role="group">
+            <div class="btn-group btn-group-lg flashing" role="group">
+                <button type="button" class="btn btn-default backoff active" onclick="change('backoff',0)" id="backoff0">Standing</button>
+            </div>
+            <div class="btn-group btn-group-lg flashing" role="group">
+                <button type="button" class="btn btn-default backoff" onclick="change('backoff', 1)" id="backoff1">Backoff</button>
+            </div>
+        </div>
+        <button class="btn btn-primary btn-lg btn-block" onclick="stop()">Car starts moving (<span id="watch">0</span> s)</button>
+    </div>
+
+</div>
+
 
 </body>
 </html>
