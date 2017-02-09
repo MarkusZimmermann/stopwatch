@@ -44,10 +44,10 @@ function submit(reaction, additional) {
         data: data,
         dataType: "xml",
         success: function() {
-            $('#wait').hide();
+            setTimeout(function(){$('#wait').hide()},500);
         },
         error: function(error) {
-            $('#wait').hide();
+            setTimeout(function(){$('#wait').hide()},500);
         }
     });
 }
