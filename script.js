@@ -29,6 +29,7 @@ var timer;
 var time = 0;
 
 function submit(reaction, additional) {
+    $('#wait').css('display', 'flex');
     var data = {
         "entry.364832717": concepts[active["concept"]],
         "entry.1995415787": reactions[reaction],
@@ -43,10 +44,10 @@ function submit(reaction, additional) {
         data: data,
         dataType: "xml",
         success: function() {
-            alert("Response submitted");
+            $('#wait').hide();
         },
         error: function(error) {
-            alert("Response submitted");
+            $('#wait').hide();
         }
     });
 }
